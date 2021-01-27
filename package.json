@@ -1,0 +1,25 @@
+{
+  "name": "recipemaster-api",
+  "version": "1.0.0",
+  "description": "Typescript RecipeMaster API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardormlins/recipemaster-api.git"
+  },
+  "keywords": [
+    "typescript",
+    "api",
+    "recipes",
+    "node"
+  ],
+  "author": "github.com/leonardormlins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardormlins/recipemaster-api/issues"
+  },
+  "homepage": "https://github.com/leonardormlins/recipemaster-api#readme"
+}
