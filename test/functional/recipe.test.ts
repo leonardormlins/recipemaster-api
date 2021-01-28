@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 
-let app: any;
+const app = "";
 
 describe('Recipes functional tests', ()=> {
     it('should return recipes', async ()=> {
