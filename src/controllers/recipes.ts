@@ -1,10 +1,13 @@
-import { Controller, Get } from '@overnightjs/core';
+import { Controller, Post } from '@overnightjs/core';
+import { Recipe } from '@src/models/recipe';
 import { Request, Response } from 'express';
 
-@Controller('recipes')
+@Controller('recipe')
 export class RecipeController {
-  @Get('')
-  public getRecipesForLoggedUser(_: Request, res: Response): void {
-    res.send({ recipe: 'recipeOne' });
+  @Post('')
+  public async create(req: Request, res: Response): Promise<void> {
+    const recipe = new Recipe(req.body);
+    const result = await recipe.save();
+    res.status(201).send(result);
   }
 }
