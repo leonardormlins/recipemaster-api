@@ -1,4 +1,4 @@
-import { Controller, Post } from '@overnightjs/core';
+import { Controller, Get, Post } from '@overnightjs/core';
 import { Recipe } from '@src/models/recipe';
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
@@ -18,6 +18,17 @@ export class RecipeController {
       } else {
         res.status(500).send({ error: 'Internal Server Error' });
       }
+    }
+  }
+
+  @Get('')
+  public async getAllRecipes(_: Request, res: Response): Promise<void> {
+    try {
+      const recipes = await Recipe.find({});
+      res.status(200).send(recipes);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ error: 'Internal Server Error' });
     }
   }
 }
