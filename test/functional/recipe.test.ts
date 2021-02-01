@@ -55,5 +55,14 @@ describe('Recipes functional tests', () => {
       expect(response.status).toBe(200);
       expect(response.body).toContainEqual(newRecipe);
     });
+
+    it('should return an specific recipe', async () => {
+      const response = await global.testRequest.get(
+        '/recipe/?title=' + encodeURI(newRecipe.title)
+      );
+      console.log(response.body);
+      expect(response.status).toBe(200);
+      expect(response.body).toContainEqual(newRecipe);
+    });
   });
 });
