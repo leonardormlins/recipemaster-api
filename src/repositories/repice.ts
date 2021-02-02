@@ -34,7 +34,7 @@ export const create = async (req: Request): Promise<RepositoryResponse> => {
 
 export const findAll = async (): Promise<RepositoryResponse> => {
   try {
-    const recipes = Recipe.find({});
+    const recipes = await Recipe.find({});
     return { code: 200, error: undefined, recipe: recipes };
   } catch (error) {
     const newError: RepositoryResponse = {
