@@ -16,7 +16,7 @@ docker-compose up -d
 ```bash
 yarn install
 ```
-* also works with npm.
+also works with npm.
 
 - Run functional tests:
 
