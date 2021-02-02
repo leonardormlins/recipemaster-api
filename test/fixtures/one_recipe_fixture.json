@@ -1,0 +1,20 @@
+{
+    "title": "Thanksgiving Quesadilla",
+    "author": "Gevans",
+    "ingredients": [
+      {
+        "name": "Flour tortillas",
+        "amount": "2",
+        "unit": ""
+      },
+      {
+        "name": "Shredded Cheddar cheese",
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "directions": [
+      "Heat a skillet over medium heat. Place 1 tortilla...",
+      "Cook until tortilla is golden ..."
+    ]
+}

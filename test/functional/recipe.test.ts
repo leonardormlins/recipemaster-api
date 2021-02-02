@@ -1,33 +1,15 @@
 import { Recipe } from '@src/models/recipe';
+import oneRecipeFixture from '../fixtures/one_recipe_fixture.json';
 
 describe('Recipes functional tests', () => {
-  const newRecipe = {
-    title: 'Thanksgiving Quesadilla',
-    author: 'Gevans',
-    ingredients: [
-      {
-        name: 'Flour tortillas',
-        amount: '2',
-        unit: '',
-      },
-      {
-        name: 'Shredded Cheddar cheese',
-        amount: '1/2',
-        unit: 'cup',
-      },
-    ],
-    directions: [
-      'Heat a skillet over medium heat. Place 1 tortilla...',
-      'Cook until tortilla is golden ...',
-    ],
-  };
-
   describe('When creating a recipe', () => {
     beforeAll(async () => await Recipe.deleteMany({}));
     it('should create a recipe with success', async () => {
-      const response = await global.testRequest.post('/recipe').send(newRecipe);
+      const response = await global.testRequest
+        .post('/recipe')
+        .send(oneRecipeFixture);
       expect(response.status).toBe(201);
-      expect(response.body).toEqual(newRecipe);
+      expect(response.body).toEqual(oneRecipeFixture);
     });
 
     it('should return 422 when there is a validation error', async () => {
@@ -46,23 +28,23 @@ describe('Recipes functional tests', () => {
   describe('When getting recipes', () => {
     beforeAll(async () => {
       await Recipe.deleteMany({});
-      const recipe = new Recipe(newRecipe);
+      const recipe = new Recipe(oneRecipeFixture);
       recipe.save();
     });
 
     it('should return all recipes from database', async () => {
       const response = await global.testRequest.get('/recipe');
       expect(response.status).toBe(200);
-      expect(response.body).toContainEqual(newRecipe);
+      expect(response.body).toContainEqual(oneRecipeFixture);
     });
 
     it('should return an specific recipe', async () => {
       const response = await global.testRequest.get(
-        '/recipe/?title=' + encodeURI(newRecipe.title)
+        '/recipe/?title=' + encodeURI(oneRecipeFixture.title)
       );
       console.log(response.body);
       expect(response.status).toBe(200);
-      expect(response.body).toContainEqual(newRecipe);
+      expect(response.body).toContainEqual(oneRecipeFixture);
     });
   });
 });
