@@ -10,6 +10,7 @@
     "lint": "eslint ./src ./test --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
     "test:functional": "jest --projects ./test --runInBand",
+    "test:unit": "jest",
     "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
     "style:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'"
   },
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/leonardormlins/recipemaster-api#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/config": "^0.0.38",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
@@ -49,6 +51,7 @@
   },
   "dependencies": {
     "@overnightjs/core": "^1.7.5",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "config": "^3.3.3",
     "express": "^4.17.1",

@@ -42,7 +42,6 @@ describe('Recipes functional tests', () => {
       const response = await global.testRequest.get(
         '/recipe/?title=' + encodeURI(oneRecipeFixture.title)
       );
-      console.log(response.body);
       expect(response.status).toBe(200);
       expect(response.body).toContainEqual(oneRecipeFixture);
     });
