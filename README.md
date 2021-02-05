@@ -23,3 +23,8 @@ also works with npm.
 ```bash
 yarn test:functional
 ```
+- Run unit tests:
+
+```bash
+yarn test:unit
+```
