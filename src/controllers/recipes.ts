@@ -1,8 +1,8 @@
 import { Controller, Get, Post } from '@overnightjs/core';
 import { Request, Response } from 'express';
-import { Repository } from '@src/repositories/repice';
+import RecipeRepository from '@src/repositories/repice';
 
-const repository = new Repository();
+const repository = new RecipeRepository();
 
 @Controller('recipe')
 export class RecipeController {

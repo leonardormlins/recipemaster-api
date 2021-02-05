@@ -4,8 +4,8 @@ export interface Recipe {
   _id?: string;
   title: string;
   author: string;
-  ingredients: [];
-  directions: [];
+  ingredients: Ingredients[];
+  directions: string[];
 }
 
 export interface Ingredients {

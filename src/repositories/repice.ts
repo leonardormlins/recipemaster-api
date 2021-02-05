@@ -20,7 +20,7 @@ interface Payload {
   directions: string[];
 }
 
-export class Repository {
+export default class RecipeRepository {
   public async create(payload: Payload): Promise<RepositoryResponse> {
     try {
       const recipe = new Recipe(payload);
