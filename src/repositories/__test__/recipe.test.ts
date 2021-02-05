@@ -16,4 +16,14 @@ describe('Recipe repositoy', () => {
     const response = await mockedRecipe.create(oneRecipeFixture);
     expect(response).toEqual(expectedResponse);
   });
+  it('should return all recipes', async () => {
+    const expectedResponse = {
+      code: 200,
+      error: undefined,
+      recipe: oneRecipeFixture,
+    };
+    mockedRecipe.findAll.mockResolvedValue(expectedResponse);
+    const response = await mockedRecipe.findAll();
+    expect(response).toEqual(expectedResponse);
+  });
 });
